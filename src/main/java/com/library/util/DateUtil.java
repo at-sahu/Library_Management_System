@@ -1,0 +1,3 @@
+package com.library.util;
+import java.time.LocalDate; import java.time.temporal.ChronoUnit;
+public final class DateUtil { public static final int LOAN_DAYS=14; public static final int FINE_PER_DAY=5; private DateUtil(){} public static LocalDate dueDate(LocalDate issue){return dueDate(issue,LOAN_DAYS);} public static LocalDate dueDate(LocalDate issue,int days){if(days<1||days>30)throw new IllegalArgumentException("Loan duration must be between 1 and 30 days.");return issue.plusDays(days);} public static long lateDays(LocalDate due,LocalDate returned){return Math.max(0,ChronoUnit.DAYS.between(due,returned));} }
