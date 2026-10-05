@@ -26,12 +26,11 @@ A desktop library management system for a B.Tech semester project, built with Ja
 
 The SQL script creates `library_db`, all required tables, indexes, categories, two administrators, sample students, books, and transactions.
 
-## Demo credentials
+## Credentials
 
 | Role | ID / enrollment number | Password |
 | --- | --- | --- |
-| Admin | anshu@admin | anshu@13 |
-| Admin | krrish@admin | krrish@11 |
+| Admin 
 | Student | Existing enrollment number | Existing student password |
 
 Passwords are stored only as BCrypt hashes in the database. They are documented here solely for the local academic demonstration data.
