@@ -4,8 +4,6 @@ import com.library.enums.Role;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-
-/** First screen shown by the application so each role uses its own login flow. */
 public class RoleSelectionFrame extends JFrame {
     public RoleSelectionFrame() {
         super("Smart Library System"); UI.style(); setDefaultCloseOperation(EXIT_ON_CLOSE); setSize(620, 390); setResizable(false); setLocationRelativeTo(null);
