@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Admin screen to issue a book to a student. */
 public class IssueBookFrame extends JFrame {
 
     private final MemberService memberService = new MemberService();
@@ -55,7 +54,6 @@ public class IssueBookFrame extends JFrame {
             }
         });
 
-        // Pressing Enter in a search box works like clicking "Find".
         studentSearch.addActionListener(e -> filterMembers());
         bookSearch.addActionListener(e -> filterBooks());
         getRootPane().setDefaultButton(issueButton);
@@ -63,7 +61,6 @@ public class IssueBookFrame extends JFrame {
         loadData();
     }
 
-    // ---------- UI building ----------
 
     private JPanel buildForm() {
         JPanel p = new JPanel(new GridBagLayout());
@@ -110,7 +107,6 @@ public class IssueBookFrame extends JFrame {
         }
     }
 
-    // ---------- Data loading and filtering ----------
 
     private void loadData() {
         try {
@@ -143,7 +139,6 @@ public class IssueBookFrame extends JFrame {
             String term = bookSearch.getText().trim();
             List<Book> found = new ArrayList<>(bookService.search(term));
 
-            // Also allow searching by numeric book ID.
             if (term.matches("\\d+")) {
                 Book byId = bookService.get(Long.parseLong(term));
                 if (byId != null && found.stream().noneMatch(b -> b.getBookId() == byId.getBookId())) {
@@ -165,8 +160,6 @@ public class IssueBookFrame extends JFrame {
         status.setText(members.getItemCount() + " student(s) and " + books.getItemCount() + " book(s) found");
         issueButton.setEnabled(members.getItemCount() > 0 && books.getItemCount() > 0);
     }
-
-    // ---------- Issue action ----------
 
     private void issue() {
         try {
