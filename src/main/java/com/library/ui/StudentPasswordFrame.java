@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-/** Lets an administrator find a student, then set a new password for that student. */
 public class StudentPasswordFrame extends JFrame {
     private final MemberService service = new MemberService();
     private final JTextField search = new JTextField();
